@@ -1,9 +1,11 @@
 const router = require('express').Router();
 
+// Import the video controller
+
 // const { adminRegister, adminLogIn, deleteAdmin, getAdminDetail, updateAdmin } = require('../controllers/admin-controller.js');
 
 const { adminRegister, adminLogIn, getAdminDetail} = require('../controllers/admin-controller.js');
-
+// const { getLectures, createLecture, deleteLecture } = require('../controllers/lecture-controller.js');
 const { sclassCreate, sclassList, deleteSclass, deleteSclasses, getSclassDetail, getSclassStudents } = require('../controllers/class-controller.js');
 const { complainCreate, complainList } = require('../controllers/complain-controller.js');
 const { noticeCreate, noticeList, deleteNotices, deleteNotice, updateNotice } = require('../controllers/notice-controller.js');
@@ -24,6 +26,11 @@ const {
     removeStudentAttendance } = require('../controllers/student_controller.js');
 const { subjectCreate, classSubjects, deleteSubjectsByClass, getSubjectDetail, deleteSubject, freeSubjectList, allSubjects, deleteSubjects } = require('../controllers/subject-controller.js');
 const { teacherRegister, teacherLogIn, getTeachers, getTeacherDetail, deleteTeachers, deleteTeachersByClass, deleteTeacher, updateTeacherSubject, teacherAttendance } = require('../controllers/teacher-controller.js');
+const { getLectures } = require('../controllers/lecture-controller');
+
+// Define route to handle GET requests to /view-lectures
+router.get('/view-lectures', getLectures);
+
 
 // Admin
 router.post('/AdminReg', adminRegister);
@@ -38,7 +45,6 @@ router.get("/Admin/:id", getAdminDetail)
 
 router.post('/StudentReg', studentRegister);
 router.post('/StudentLogin', studentLogIn)
-
 router.get("/Students/:id", getStudents)
 router.get("/Student/:id", getStudentDetail)
 
@@ -115,5 +121,6 @@ router.get("/Subject/:id", getSubjectDetail)
 router.delete("/Subject/:id", deleteSubject)
 router.delete("/Subjects/:id", deleteSubjects)
 router.delete("/SubjectsClass/:id", deleteSubjectsByClass)
+
 
 module.exports = router;

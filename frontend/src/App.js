@@ -8,6 +8,9 @@ import TeacherDashboard from './pages/teacher/TeacherDashboard';
 import LoginPage from './pages/LoginPage';
 import AdminRegisterPage from './pages/admin/AdminRegisterPage';
 import ChooseUser from './pages/ChooseUser';
+import ViewLecturesPage from './pages/student/ViewLecturesPage.js';
+import { studentReducer } from './redux/studentRelated/studentSlice.js';
+import StudentSubjects from './pages/student/StudentSubjects.js';
 
 const App = () => {
   const { currentRole } = useSelector(state => state.user);
@@ -23,10 +26,11 @@ const App = () => {
           <Route path="/Adminlogin" element={<LoginPage role="Admin" />} />
           <Route path="/Studentlogin" element={<LoginPage role="Student" />} />
           <Route path="/Teacherlogin" element={<LoginPage role="Teacher" />} />
-
+       
+          <Route path="/view-lectures" element={<ViewLecturesPage role="Student"/>} />{/* Define the route for the ViewLecturesPage */}
           <Route path="/Adminregister" element={<AdminRegisterPage />} />
 
-          <Route path='*' element={<Navigate to="/" />} />
+          {/* <Route path='*' element={<Navigate to="/" />} /> */}
         </Routes>}
 
       {currentRole === "Admin" &&
@@ -38,6 +42,7 @@ const App = () => {
       {currentRole === "Student" &&
         <>
           <StudentDashboard />
+          
         </>
       }
 

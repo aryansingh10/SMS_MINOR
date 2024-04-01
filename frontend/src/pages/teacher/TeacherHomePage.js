@@ -55,7 +55,7 @@ const TeacherHomePage = () => {
                             <Title>
                                 Tests Taken
                             </Title>
-                            <Data start={0} end={24} duration={4} />
+                            <Data start={0} end={21} duration={4} />
                         </StyledPaper>
                     </Grid>
                     <Grid item xs={12} md={3} lg={3}>
