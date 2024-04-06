@@ -10,10 +10,15 @@ import CountUp from 'react-countup';
 import Subject from "../../assets/subjects.svg";
 import Assignment from "../../assets/assignment.svg";
 import { getSubjectList } from '../../redux/sclassRelated/sclassHandle';
+import { Link, useNavigate } from 'react-router-dom';
 
 const StudentHomePage = () => {
     const dispatch = useDispatch();
-
+       const navigate=useNavigate();
+       
+       const cardClickHandler=()=>{
+              navigate('/student/subjects')
+       }
     const { userDetails, currentUser, loading, response } = useSelector((state) => state.user);
     const { subjectsList } = useSelector((state) => state.sclass);
 
@@ -45,7 +50,7 @@ const StudentHomePage = () => {
         <>
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
                 <Grid container spacing={3}>
-                    <Grid item xs={12} md={3} lg={3}>
+                    <Grid item xs={12} md={3} lg={3} onClick={cardClickHandler}>
                         <StyledPaper>
                             <img src={Subject} alt="Subjects" />
                             <Title>
@@ -55,12 +60,13 @@ const StudentHomePage = () => {
                         </StyledPaper>
                     </Grid>
                     <Grid item xs={12} md={3} lg={3}>
+                        
                         <StyledPaper>
                             <img src={Assignment} alt="Assignments" />
                             <Title>
                                 Total Assignments
                             </Title>
-                            <Data start={0} end={15} duration={4} />
+                            <Data start={0} end={0} duration={4} />
                         </StyledPaper>
                     </Grid>
                     <Grid item xs={12} md={4} lg={3}>

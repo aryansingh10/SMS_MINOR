@@ -5,6 +5,9 @@ const MachineLearningLectures = () => {
     const lectures = [
       
         { title: 'Real Numbers', videoId: 'vRAp1w3-BHg' },
+        { title: 'Introduction to Polynomials ', videoId: 'e-ldF73jG9E' },
+        { title: 'Introduction to Pair of Linear Eq in Two Variables', videoId: 'Cghu-H6eht0' },
+        
     
     
       
