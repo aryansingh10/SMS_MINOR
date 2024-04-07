@@ -29,6 +29,17 @@ export const updateStudentFields = (id, fields, address) => async (dispatch) => 
         const result = await axios.put(`${process.env.REACT_APP_BASE_URL}/${address}/${id}`, fields, {
             headers: { 'Content-Type': 'application/json' },
         });
+
+        const mailStudentAttendanceStatus = await axios.post(
+            `${process.env.REACT_APP_BASE_URL}/Admin/sendmail`,
+            fields,
+            {
+              headers: { "Content-Type": "application/json" },
+            }
+          );
+      
+          console.log("mail student is ", mailStudentAttendanceStatus);
+
         if (result.data.message) {
             dispatch(getFailed(result.data.message));
         } else {
