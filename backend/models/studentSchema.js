@@ -41,6 +41,10 @@ const studentSchema = new mongoose.Schema({
             marksObtained: {
                 type: Number,
                 default: 0
+            },
+            totalMarks: {
+                type: Number,
+                default: 0
             }
         }
     ],

@@ -62,6 +62,7 @@ const StudentMarks= () => {
                         <StyledTableRow>
                             <StyledTableCell>Subject</StyledTableCell>
                             <StyledTableCell>Marks</StyledTableCell>
+                            <StyledTableCell>Total Marks</StyledTableCell>
                         </StyledTableRow>
                     </TableHead>
                     <TableBody>
@@ -73,6 +74,7 @@ const StudentMarks= () => {
                                 <StyledTableRow key={index}>
                                     <StyledTableCell>{result.subName.subName}</StyledTableCell>
                                     <StyledTableCell>{result.marksObtained}</StyledTableCell>
+                                    <StyledTableCell>{result.totalMarks}</StyledTableCell>
                                 </StyledTableRow>
                             );
                         })}
