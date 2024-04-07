@@ -11,18 +11,23 @@ const Assignments = () => {
     {
       title: "Assignment-1",
       deadline: "04/04/2024",
-      url: "https://drive.google.com/file/d/1rbEnoNxQWuf5BlieybGC44e0hj2LQhxL/view?usp=sharing",
+      url: "https://docs.google.com/document/d/14BbMovlbfz8knkrL9uYMg5RVU66fuBD1zCPCGX_qmEw/edit?usp=drive_link",
     },
     {
       title: "Assignment-2",
       deadline: "07/04/2024",
-      url: "https://drive.google.com/file/d/1rbEnoNxQWuf5BlieybGC44e0hj2LQhxL/view?usp=sharing",
+      url: "https://docs.google.com/document/d/1TvrttA6WCZvriG6ZedwnQeoA7RPn5BY3ZffFPvgGuao/edit?usp=drive_link",
+    },
+    {
+      title: "Assignment-3",
+      deadline: "18/04/2024",
+      url: "https://docs.google.com/document/d/1aHVODXnHhn4BOcDzqNj4sNag5erpUFumelHqfJ4WtyY/edit?usp=drive_link",
     },
   ];
   return (
     <>
       <Typography variant="h4" align="center" gutterBottom>
-        Subject Marks
+        Assignment
       </Typography>
 
       <Table>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom'
 import { getClassDetails, getClassStudents, getSubjectList } from "../../../redux/sclassRelated/sclassHandle";
+import {getTeacherDetails} from "../../../redux/teacherRelated/teacherHandle"
 import { deleteUser } from '../../../redux/userRelated/userHandle';
 import {
     Box, Container, Typography, Tab, IconButton
@@ -24,6 +25,9 @@ const ClassDetails = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch();
     const { subjectsList, sclassStudents, sclassDetails, loading, error, response, getresponse } = useSelector((state) => state.sclass);
+
+    const {teachersList, teacherDetails} = useSelector((state)=>state.teacher)
+    
 
     const classID = params.id
 
@@ -131,12 +135,23 @@ const ClassDetails = () => {
         { id: 'name', label: 'Name', minWidth: 170 },
         { id: 'rollNum', label: 'Roll Number', minWidth: 100 },
     ]
+    const teacherColumns = [
+        { id: 'name', label: 'Name', minWidth: 170 },
+        { id: 'subject', label: 'subject', minWidth: 100 },
+    ]
 
     const studentRows = sclassStudents.map((student) => {
         return {
             name: student.name,
             rollNum: student.rollNum,
             id: student._id,
+        };
+    })
+    const teacherRows = teachersList.map((teacher) => {
+        return {
+            name: teacher.name,
+            subject: teacher.teachSubject.subName,
+            id: teacher._id,
         };
     })
 
@@ -206,7 +221,27 @@ const ClassDetails = () => {
     const ClassTeachersSection = () => {
         return (
             <>
-                Teachers
+                {getresponse ? (
+                    <>
+                        <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginTop: '16px' }}>
+                            <GreenButton
+                                variant="contained"
+                                onClick={() => navigate("/Admin/class/addstudents/" + classID)}
+                            >
+                                Add Students
+                            </GreenButton>
+                        </Box>
+                    </>
+                ) : (
+                    <>
+                        <Typography variant="h5" gutterBottom>
+                            Students List:
+                        </Typography>
+
+                        <TableTemplate buttonHaver={StudentsButtonHaver} columns={teacherColumns} rows={studentRows} />
+                        {/* <SpeedDialTemplate actions={studentActions} /> */}
+                    </>
+                )}
             </>
         )
     }
@@ -262,7 +297,7 @@ const ClassDetails = () => {
                                     <Tab label="Details" value="1" />
                                     <Tab label="Subjects" value="2" />
                                     <Tab label="Students" value="3" />
-                                    <Tab label="Teachers" value="4" />
+                                    {/* <Tab label="Teachers" value="4" /> */}
                                 </TabList>
                             </Box>
                             <Container sx={{ marginTop: "3rem", marginBottom: "4rem" }}>

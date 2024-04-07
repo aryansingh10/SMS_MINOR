@@ -1,14 +1,11 @@
 import React from 'react';
 
-const ComputerNetworksLectures = () => {
+const SocialScience = () => {
     // Define an array of lecture data with titles and YouTube video IDs
     const lectures = [
-        { title: 'A Triumph of surgery', videoId: 'sAgRPfiTOA0?si=bfZ-uVPpXTKnZYEL' },
-        { title: 'Nelson Mandela', videoId: 'O1PocKoabTo?si=tYm3woOxy8FXBC_u' },
-        { title: 'Two Stories About Flying', videoId: 'ZTmmJZZhljE?si=XahqgG7dwnVrOw_U' },
-        // { title: 'Network Protocols and Layers', videoId: 'VIDEO_ID_2' },
-        // { title: 'Routing and Switching', videoId: 'VIDEO_ID_3' },
-        // Add more lectures as needed
+        { title: 'Making of the Global World', videoId: 'W1Gx4FjKJTo?si=yyQ25p5REMpdEYmm' },
+        { title: 'The Rise of Nationalism', videoId: 'GDlWkr6sAT4?si=MnF3tMk-JaCgCDHD' },
+        { title: 'Nationalism in India', videoId: 'HP1kdhvZGzc?si=WIdNwP9VhJ26n10F' },
     ];
 
 
@@ -38,4 +35,4 @@ const ComputerNetworksLectures = () => {
     );
 };
 
-export default ComputerNetworksLectures;
+export default SocialScience;
