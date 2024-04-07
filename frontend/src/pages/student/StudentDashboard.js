@@ -26,6 +26,8 @@ import ViewLecturesPage from './ViewLecturesPage.js';
 import StudentMarks from './StudentMarks.js';
 import MachineLearningLectures from './MachineLearningLectures.js';
 import ComputerNetworksLectures from './ComputerNetworksLectures.js';
+import ViewAssignments from './ViewAssignments.js';
+import Assignments from './Assignments.js';
 
 const StudentDashboard = () => {
     const [open, setOpen] = useState(true);
@@ -86,6 +88,8 @@ const StudentDashboard = () => {
                         <Route path="/Student/attendance" element={<ViewStdAttendance />} />
                         <Route path="/Student/complain" element={<StudentComplain />} />
                         <Route path="/view-lectures" element={<ViewLecturesPage/>} />
+                        <Route path="/view-assignments" element={<ViewAssignments/>} />
+                        <Route path="/viewassignment" element={<Assignments/>} />
                         <Route path='/view-marks' element={<StudentMarks/>}/>
               <Route path='/view-lectures-Maths' element={<MachineLearningLectures/>}/>
               <Route path='/view-lectures-English' element={<ComputerNetworksLectures/>}/>

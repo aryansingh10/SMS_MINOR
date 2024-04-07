@@ -17,16 +17,20 @@ const StudentSubjects = () => {
             <Grid container spacing={2} justifyContent="center">
                 <Grid item>
                     <Button variant="contained" component={Link} to="/view-marks">
-                        View Marks
+                        Marks
                     </Button>
                 </Grid>
                 <Grid item>
                     <Button variant="contained" component={Link} to="/view-lectures">
-                        View Lectures
+                        Lectures
+                    </Button>
+                </Grid>
+                <Grid item>
+                    <Button variant="contained" component={Link} to="/view-assignments">
+                        Assignments
                     </Button>
                 </Grid>
             </Grid>
-
             {selectedSection === 'marks' && (
                 <div>
                     <Typography variant="h5" align="center" gutterBottom>

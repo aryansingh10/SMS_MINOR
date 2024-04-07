@@ -4,7 +4,7 @@ import { getSubjectList } from "../../redux/sclassRelated/sclassHandle";
 import { Typography, Button, Container, Grid, Paper } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 
-const ViewLecturesPage = () => {
+const ViewAssignments = () => {
   const dispatch = useDispatch();
   const { subjectsList, sclassDetails } = useSelector((state) => state.sclass);
 
@@ -13,7 +13,7 @@ const ViewLecturesPage = () => {
   return (
     <Container maxWidth="md" sx={{ paddingTop: "20px" }}>
       <Typography variant="h4" component="h1" gutterBottom>
-        View Lectures 
+        View Assignments
       </Typography>
       <Grid container spacing={3}>
         {subjectsList.map((result, index) => {
@@ -24,11 +24,11 @@ const ViewLecturesPage = () => {
                   {result.subName} - {result.subCode}
                 </Typography>
                 <Link
-                  to={`/view-lectures-${result.subName}`}
+                  to="/viewassignment"
                   style={{ textDecoration: "none" }}
                 >
                   <Button variant="contained" color="primary">
-                    View {result.subName} Lectures
+                    View {result.subName} Assignments
                   </Button>
                 </Link>
               </Paper>
@@ -40,4 +40,4 @@ const ViewLecturesPage = () => {
   );
 };
 
-export default ViewLecturesPage;
+export default ViewAssignments;

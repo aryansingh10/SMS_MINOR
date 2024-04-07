@@ -63,7 +63,8 @@ const studentSchema = new mongoose.Schema({
             ref: 'subject',
             required: true
         }
-    }]
+
+    }],
 });
 
 module.exports = mongoose.model("student", studentSchema);

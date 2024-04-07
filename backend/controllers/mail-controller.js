@@ -58,7 +58,7 @@ const sendMailStudent = async (req, res) => {
     const mailOptions = {
       from: "jaiswalarpit1414@gmail.com", // Sender's email address
       to: email,
-      subject: "Academic Nexus : Notifiaction to Students",
+      subject: "Academic Nexus : Notification to Students",
       text: status
         ? `You'r Attendance is marked with status ${status} for subject ${subjectDetail.subName} on ${date} `
         : `You are Added to the ${classDetail.sclassName} , your roll ${rollNum} and password ${password}`,
