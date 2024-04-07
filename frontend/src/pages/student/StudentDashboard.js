@@ -87,8 +87,8 @@ const StudentDashboard = () => {
                         <Route path="/Student/complain" element={<StudentComplain />} />
                         <Route path="/view-lectures" element={<ViewLecturesPage/>} />
                         <Route path='/view-marks' element={<StudentMarks/>}/>
-              <Route path='/view-lectures-ml' element={<MachineLearningLectures/>}/>
-              <Route path='/view-lectures-cn' element={<ComputerNetworksLectures/>}/>
+              <Route path='/view-lectures-Maths' element={<MachineLearningLectures/>}/>
+              <Route path='/view-lectures-English' element={<ComputerNetworksLectures/>}/>
                         <Route path="/logout" element={<Logout />} />
                     </Routes>
                 </Box>
